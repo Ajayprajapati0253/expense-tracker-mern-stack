@@ -110,7 +110,7 @@ const UpdateExpense = ({ expense }) => {
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-106.25">
         <DialogHeader>
           <DialogTitle>Update Expense</DialogTitle>
           <DialogDescription>
@@ -183,3 +183,8 @@ const UpdateExpense = ({ expense }) => {
 };
 
 export default UpdateExpense;
+
+
+//! chatgpt responsive code 
+
+

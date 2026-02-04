@@ -20,7 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import axios from "axios";
+import api from "@/api/axios";
 import { toast } from "sonner";
 import { Edit2, Loader2 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
@@ -71,8 +71,8 @@ const UpdateExpense = ({ expense }) => {
     try {
       setLoading(true);
 
-      const res = await axios.put(
-        `http://localhost:8000/api/v1/expense/update/${expense._id}`,
+      const res = await api.put(
+        `/api/v1/expense/update/${expense._id}`,
         formData,
         {
           headers: { "Content-Type": "application/json" },

@@ -43,7 +43,7 @@
 //   const handleCheckboxChange = async (expenseId) => {
 //     const newStatus = !checkedItems[expenseId];
 //     try{
-//       const res = await axios.put(`http://localhost:8000/api/v1/expense/${expenseId}/done`,{done:newStatus},{
+//       const res = await axios.put(`/api/v1/expense/${expenseId}/done`,{done:newStatus},{
 //         headers:{
 //           'Content-Type': 'application/json'
 //         },
@@ -67,7 +67,7 @@
 //   //! Remove expense from expenses  
 //   const removeExpenseHandler = async(expenseId)=>{
 //     try {
-//       const res =  await axios.delete(`http://localhost:8000/api/v1/expense/remove/${expenseId}`);
+//       const res =  await axios.delete(`/api/v1/expense/remove/${expenseId}`);
 //       if(res.data.success){
 //         toast.success(res.data.message);
 //         // update the local state
@@ -147,7 +147,7 @@ import { Checkbox } from "./ui/checkbox";
 import { Button } from "./ui/button";
 import { Trash } from "lucide-react";
 import UpdateExpense from "./UpdateExpense";
-import axios from "axios";
+import api from "@/api/axios";
 import { toast } from "sonner";
 
 /* 🎨 Category badge colors */
@@ -176,8 +176,8 @@ const ExpenseTable = () => {
   const handleCheckboxChange = async (expenseId) => {
     const newStatus = !checkedItems[expenseId];
     try {
-      const res = await axios.put(
-        `http://localhost:8000/api/v1/expense/${expenseId}/done`,
+      const res = await api.put(
+        `/api/v1/expense/${expenseId}/done`,
         { done: newStatus },
         {
           headers: { "Content-Type": "application/json" },
@@ -204,8 +204,8 @@ const ExpenseTable = () => {
 
   const removeExpenseHandler = async (expenseId) => {
     try {
-      const res = await axios.delete(
-        `http://localhost:8000/api/v1/expense/remove/${expenseId}`
+      const res = await api.delete(
+        `/api/v1/expense/remove/${expenseId}`
       );
       if (res.data.success) {
         toast.success(res.data.message);

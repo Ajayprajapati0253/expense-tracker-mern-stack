@@ -60,7 +60,7 @@
 //       setLoading(true);
 //       // api call to create expense
 //       const res = await axios.post(
-//         "http://localhost:8000/api/v1/expense/add",
+//         "/api/v1/expense/add",
 //         formData,
 //         {
 //           headers: {
@@ -182,7 +182,7 @@ import {
   Select, SelectContent, SelectGroup, SelectItem,
   SelectTrigger, SelectValue
 } from "@/components/ui/select";
-import axios from "axios";
+import api from "@/api/axios";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
@@ -199,8 +199,8 @@ const CreateExpense = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await axios.post(
-        "http://localhost:8000/api/v1/expense/add",
+      const res = await api.post(
+        "/api/v1/expense/add",
         formData,
         { headers: { "Content-Type": "application/json" }, withCredentials: true }
       );

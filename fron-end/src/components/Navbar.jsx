@@ -19,7 +19,7 @@
 //         try {
 //             // ✅ send cookie to backend
 //             const res = await axios.get(
-//                 "http://localhost:8000/api/v1/user/logout",
+//                 "/api/v1/user/logout",
 //                 { withCredentials: true }
 //             )
 
@@ -82,7 +82,7 @@ import { Avatar, AvatarImage } from './ui/avatar'
 import { Popover, PopoverTrigger, PopoverContent } from './ui/popover'
 import { Button } from './ui/button'
 import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import api from '@/api/axios'
 import { toast } from 'sonner'
 import { useDispatch, useSelector } from 'react-redux'
 import { logoutAndClearData } from '@/redux/authSlice' 
@@ -94,8 +94,8 @@ const Navbar = () => {
 
   const logoutHandler = async () => {
     try {
-      const res = await axios.get(
-        "http://localhost:8000/api/v1/user/logout",
+      const res = await api.get(
+        "/api/v1/user/logout",
         { withCredentials: true }
       )
 

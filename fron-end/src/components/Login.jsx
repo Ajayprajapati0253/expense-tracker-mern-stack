@@ -24,7 +24,7 @@
 //     const submitHandler = async(e) =>{
 //         e.preventDefault();
 //         try {
-//             const res = await axios.post("http://localhost:8000/api/v1/user/login",input,{
+//             const res = await axios.post("/api/v1/user/login",input,{
 //                 headers:{
 //                     'Content-Type':'application/json'
 //                 }
@@ -85,7 +85,7 @@ import { Input } from './ui/input'
 import Logo from './shared/Logo'
 import { Button } from './ui/button'
 import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import api from '@/api/axios'
 import { toast } from 'sonner'
 import { useDispatch } from 'react-redux'
 import { setAuthUser } from '@/redux/authSlice'
@@ -106,8 +106,8 @@ const Login = () => {
   const submitHandler = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post(
-        "http://localhost:8000/api/v1/user/login",
+      const res = await api.post(
+        "/api/v1/user/login",
         input,
         { withCredentials: true }
       )

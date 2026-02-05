@@ -7,7 +7,7 @@ This app allows users to securely track their daily expenses with authentication
 
 ## 🚀 Live Demo
 
-🔗 **Frontend**: https://expense-tracker-frontend-s89r.onrender.com  
+🔗 **Frontend**: https://expense-tracker-backend-ierk.onrender.com
 🔗 **Backend API**: https://expense-tracker-backend-ierk.onrender.com  
 
 ---
